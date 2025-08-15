@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>To-Do List App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="brand">
+        <div class="logo">✓</div>
+        <h1>To-Do List</h1>
+      </div>
+      <div class="controls">
+        <button class="btn ghost" id="themeToggle" aria-pressed="false" title="Toggle theme">🌓 Theme</button>
+        <button class="btn ghost" id="exportBtn" title="Export tasks to JSON">⬇️ Export</button>
+        <label class="btn ghost" for="importFile" title="Import tasks from JSON">⬆️ Import</label>
+        <input id="importFile" type="file" accept="application/json" hidden />
+      </div>
+    </header>
+
+    <section class="panel" aria-labelledby="addTaskHeading">
+      <h2 id="addTaskHeading" class="sr-only">Add a new task</h2>
+      <form id="addForm">
+        <input id="taskInput" type="text" placeholder="What do you need to do? (e.g., Submit assignment)" aria-label="Task title" required />
+        <input id="dueInput" class="date" type="date" aria-label="Due date" />
+        <select id="priorityInput" class="priority" aria-label="Priority">
+          <option value="low">Low priority</option>
+          <option value="medium" selected>Medium priority</option>
+          <option value="high">High priority</option>
+        </select>
+        <button class="btn primary" type="submit">Add Task</button>
+      </form>
+
+      <div class="toolbar">
+        <div class="left">
+          <input id="search" type="text" placeholder="Search…" aria-label="Search tasks" />
+          <select id="statusFilter" aria-label="Filter by status">
+            <option value="all">All</option>
+            <option value="active">Active</option>
+            <option value="completed">Completed</option>
+          </select>
+          <select id="priorityFilter" aria-label="Filter by priority">
+            <option value="all">All priorities</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+        <div class="right">
+          <select id="sortBy" aria-label="Sort tasks">
+            <option value="created_desc">Newest first</option>
+            <option value="created_asc">Oldest first</option>
+            <option value="due_asc">Due date ↑</option>
+            <option value="due_desc">Due date ↓</option>
+            <option value="priority_desc">Priority High→Low</option>
+            <option value="priority_asc">Priority Low→High</option>
+            <option value="title_asc">Title A→Z</option>
+            <option value="title_desc">Title Z→A</option>
+          </select>
+          <button id="clearCompleted" class="btn" type="button">Clear Completed</button>
+        </div>
+      </div>
+
+      <ul id="list" aria-live="polite"></ul>
+      <div id="emptyState" class="empty">No tasks yet. Add your first task above ✨</div>
+
+      <footer class="statusbar">
+        <span id="counts">0 total • 0 active • 0 completed</span>
+        <span id="hint">Tip: drag items to reorder • Double-click a title to edit</span>
+      </footer>
+
+      <div id="live" class="sr-only" aria-live="polite"></div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

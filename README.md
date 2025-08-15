@@ -15,4 +15,4 @@ A simple and responsive **Task Management WebApp** that helps users keep track o
 - **Clear All** button to remove all tasks at once.  
 - Fully responsive for **mobile and desktop**.
 
-### 🔗 [Click here](https://thejitendradev.github.io/todo-list-app/) to check the live demo.
+### 🔗 [Click here](https://github.com/TheJitendraDev/To-Do-List-App/) to check the live demo.

@@ -14,5 +14,3 @@ A simple and responsive **Task Management WebApp** that helps users keep track o
 - **Search, filter, and sort** tasks easily.  
 - **Clear All** button to remove all tasks at once.  
 - Fully responsive for **mobile and desktop**.
-
-### 🔗 [Click here](https://github.com/TheJitendraDev/To-Do-List-App/) to check the live demo.
